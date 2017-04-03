@@ -2,11 +2,30 @@
 
 The Oberon javascript code standard & config.
 
+
+## Usage
+Add a `.eslintrc` file to your project:  
+
+
+```json
+{
+    "extends": "oberon"
+}
+```
+
+Install eslint & eslint-config-oberon locally (`yarn add eslint eslint-config-oberon`)
+  
+## Babel
+It is assumed you have all babel packages, `babel-eslint` & `babel-preset-reactapp` (or `babel-preset-react-native`) installed,  
+and configured from `.babelrc` or the babel property in `package.json`  
+
 ## 3rd party configs
 
 - Includes `eslint:recommended` (see included rules [here](http://eslint.org/docs/rules/))
 - Includes `plugin:flowtype/recommended` (see exact rules [here](https://github.com/gajus/eslint-plugin-flowtype/blob/master/src/configs/recommended.json))
 - Includes `plugin:react/recommended` (see exact rules [here](https://github.com/yannickcr/eslint-plugin-react/blob/master/index.js#L113))
+- Includes `plugin:jest/recommended` (see exact rules [here](https://www.npmjs.com/package/eslint-plugin-jest#recommended))  
+This doesn't mean you're required to have unit tests, it just validates them correctly if they're present
 
 ## Custom rules
 

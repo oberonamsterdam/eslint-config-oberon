@@ -10,7 +10,8 @@
     "author": "Oberon",
     "license": "MIT",
     "peerDependencies": {
-        "eslint": ">= 3"
+        "eslint": ">= 3",
+        "babel-eslint": ">= 7"
     },
     "dependencies": {
         "eslint-plugin-flowtype": "^2.30.4",
