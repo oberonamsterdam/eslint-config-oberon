@@ -1,0 +1,20 @@
+{
+    "name": "eslint-config-oberon",
+    "version": "1.0.0",
+    "description": "Oberon's eslint config",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Oberon",
+    "license": "MIT",
+    "peerDependencies": {
+        "eslint": ">= 3"
+    },
+    "dependencies": {
+        "eslint-plugin-flowtype": "^2.30.4",
+        "eslint-plugin-jest": "^19.0.1",
+        "eslint-plugin-react": "^6.10.3"
+    }
+}
