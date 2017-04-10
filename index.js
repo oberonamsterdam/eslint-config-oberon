@@ -23,7 +23,14 @@ module.exports = {
         "quotes": ["warn", "single"],
         "jsx-quotes": ["warn", "prefer-double"],
         "no-console": "warn",
-        "no-debugger": "warn"
+        "no-debugger": "warn",
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ]
     },
     "globals": {
         "module": false,

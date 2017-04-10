@@ -13,6 +13,17 @@ Add a `.eslintrc` file to your project:
 }
 ```
 
+OR add the following to your project's `package.json`
+
+```json
+{
+    ...
+    "eslintConfig": {
+        "extends": "oberon"
+    }
+}
+```
+
 Install eslint & eslint-config-oberon locally (`yarn add eslint eslint-config-oberon`)
   
 ## Babel
@@ -48,3 +59,6 @@ So we've overridden this setting from `eslint/recommended` and set it to warn.
 - `no-debugger`: warn  
 debugger statements should never be included in production code, but your code should be able to compile if you're attempting to debug something,  
 So we've overridden this setting from `eslint/recommended` and set it to warn.
+
+- `indent`: error (when indenting isn't being done with 4 spaces.)  
+`case` statement inside a `switch` should be indented by 1 indentation.
