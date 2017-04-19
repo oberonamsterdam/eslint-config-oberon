@@ -25,7 +25,7 @@ module.exports = {
         "no-console": "warn",
         "no-debugger": "warn",
         "indent": [
-            "warning",
+            "warn",
             4,
             {
                 "SwitchCase": 1
