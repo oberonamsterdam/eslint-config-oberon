@@ -60,5 +60,5 @@ So we've overridden this setting from `eslint/recommended` and set it to warn.
 debugger statements should never be included in production code, but your code should be able to compile if you're attempting to debug something,  
 So we've overridden this setting from `eslint/recommended` and set it to warn.
 
-- `indent`: error (when indenting isn't being done with 4 spaces.)  
+- `indent`: warn (when indenting isn't being done with 4 spaces.)  
 `case` statement inside a `switch` should be indented by 1 indentation.
