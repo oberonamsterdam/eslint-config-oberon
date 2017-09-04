@@ -1,6 +1,37 @@
-# Oberon ESLint config
+# Oberon ESLint config & standard
 
 The Oberon javascript code standard & config.
+
+## Codestyle
+
+### The gist
+The config consists of _93 rules_, we'll summarize them here, but for the full set, see below.
+
+- **Semicolons at the end of each statement.**
+- **camelCasing should be used on all object properties.**
+- **Always use [curly brace conventions](https://eslint.org/docs/rules/curly).** Even if your block only consists of a single statement. 
+- **Single quotes are the default.** But use double quotes within JSX. 
+- **Indents with 4 spaces**, no tabs allowed.
+- **Always use === for comparing equality**
+- **Don't use var**, use const/let instead.
+- **Don't declare multiple variables on a single line.** Except for uninitialized variables.
+This is **allowed**:
+```js
+const a, b, c;
+```  
+This **isn't:**
+```js
+const a = false, b = true, c = false;
+```
+- **Console/debugger calls will be marked as warnings.** They should not be added to production code.
+
+### Full set
+- Read the set of rules here [here](https://github.com/oberonamsterdam/eslint-config-oberon/blob/master/index.js#L20)
+- Includes `eslint:recommended` (see included rules [here](http://eslint.org/docs/rules/))
+- Includes `plugin:flowtype/recommended` (see exact rules [here](https://github.com/gajus/eslint-plugin-flowtype/blob/master/src/configs/recommended.json))
+- Includes `plugin:react/recommended` (see exact rules [here](https://github.com/yannickcr/eslint-plugin-react/blob/master/index.js#L113))
+- Includes `plugin:jest/recommended` (see exact rules [here](https://www.npmjs.com/package/eslint-plugin-jest#recommended))  
+This doesn't mean you're required to have unit tests, it just validates them correctly if they're present
 
 
 ## Usage
@@ -29,36 +60,3 @@ Install eslint & eslint-config-oberon locally (`yarn add eslint eslint-config-ob
 ## Babel
 It is assumed you have all babel packages, `babel-eslint` & `babel-preset-reactapp` (or `babel-preset-react-native`) installed,  
 and configured from `.babelrc` or the babel property in `package.json`  
-
-## 3rd party configs
-
-- Includes `eslint:recommended` (see included rules [here](http://eslint.org/docs/rules/))
-- Includes `plugin:flowtype/recommended` (see exact rules [here](https://github.com/gajus/eslint-plugin-flowtype/blob/master/src/configs/recommended.json))
-- Includes `plugin:react/recommended` (see exact rules [here](https://github.com/yannickcr/eslint-plugin-react/blob/master/index.js#L113))
-- Includes `plugin:jest/recommended` (see exact rules [here](https://www.npmjs.com/package/eslint-plugin-jest#recommended))  
-This doesn't mean you're required to have unit tests, it just validates them correctly if they're present
-
-## Custom rules
-
-- `semi`: warn  
-Semicolons are required per Oberon code style.
-
-- `react/prop-types`: off  
-We use flowtype for proptypes, so no need for propType validation.
-
-- `quotes`: single  
-We use single quotes wherever possible per Oberon code style.
-
-- `jsx-quotes`: prefer-double    
-We however, use double quotes for JSX props.
-
-- `no-console`: warn  
-console calls should never be included in production code, but your code should be able to compile if you're attempting to debug something,  
-So we've overridden this setting from `eslint/recommended` and set it to warn.
-
-- `no-debugger`: warn  
-debugger statements should never be included in production code, but your code should be able to compile if you're attempting to debug something,  
-So we've overridden this setting from `eslint/recommended` and set it to warn.
-
-- `indent`: warn (when indenting isn't being done with 4 spaces.)  
-`case` statement inside a `switch` should be indented by 1 indentation.
