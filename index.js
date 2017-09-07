@@ -122,7 +122,11 @@ module.exports = {
         "yoda": ["error", "never"],
 
         // react
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "react/jsx-boolean-value": "error",
+        "react/self-closing-comp": "error",
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
     },
     "globals": {
         "module": false,
