@@ -84,6 +84,7 @@ module.exports = {
         "no-unmodified-loop-condition": "warn",
         "no-unneeded-ternary": ["error", { "defaultAssignment": false }],
         "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true, "allowTaggedTemplates": true }],
+        "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }],
         "no-use-before-define": ["error", { "functions": false, "classes": false, "variables": false }],
         "no-useless-call": "warn",
         "no-useless-computed-key": "error",
