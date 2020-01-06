@@ -1,136 +1,106 @@
 module.exports = {
-    "parser": "babel-eslint",
     "env": {
         "browser": true,
-        "es6": true,
-        "node": true,
-        "jest/globals": true
+        "es6": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb-typescript",
+        "airbnb/hooks",
+        "plugin:prettier/recommended",
+        "prettier/@typescript-eslint",
+        "prettier/react",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "react",
-        "jest",
-        "flowtype"
-    ],
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:flowtype/recommended",
-        "plugin:jest/recommended"
+        "@typescript-eslint"
     ],
     "rules": {
-        "accessor-pairs": "error",
-        "arrow-spacing": ["error", { "before": true, "after": true }],
-        "block-spacing": ["error", "always"],
-        "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
-        "camelcase": ["error", { "properties": "always" }],
-        "comma-dangle": ["warn", "only-multiline"],
-        "comma-spacing": ["error", { "before": false, "after": true }],
-        "comma-style": ["error", "last"],
-        "curly": "error",
-        "dot-location": ["error", "property"],
-        "eqeqeq": ["error", "always"],
-        "func-call-spacing": ["error", "never"],
-        "generator-star-spacing": ["error", { "before": false, "after": true }],
-        "handle-callback-err": ["error", "^(err|error)$" ],
-        "indent": ["warn", 4, { "SwitchCase": 1 }],
-        "jsx-quotes": ["error", "prefer-double"],
-        "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
-        "keyword-spacing": ["error", { "before": true, "after": true }],
-        "new-cap": ["error", { "newIsCap": true, "capIsNew": false }],
-        "new-parens": "error",
-        "no-array-constructor": "error",
-        "no-caller": "error",
-        "no-console": "warn",
-        "no-constant-condition": ["error", { "checkLoops": false }],
-        "no-debugger": "warn",
-        "no-eval": "error",
-        "no-extend-native": "error",
-        "no-extra-bind": "warn",
-        "no-extra-parens": ["warn", "functions"],
-        "no-floating-decimal": "error",
-        "no-implied-eval": "error",
-        "no-iterator": "error",
-        "no-label-var": "error",
-        "no-labels": ["error", { "allowLoop": false, "allowSwitch": false }],
-        "no-lone-blocks": "error",
-        "no-mixed-operators": ["error", {
-            "groups": [
-                ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
-                ["&&", "||"],
-                ["in", "instanceof"]
-            ],
-            "allowSamePrecedence": true
-        }],
-        "no-multi-spaces": "error",
-        "no-multi-str": "error",
-        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
-        "no-new": "error",
-        "no-new-func": "error",
-        "no-new-object": "error",
-        "no-new-require": "error",
-        "no-new-wrappers": "error",
-        "no-octal-escape": "error",
-        "no-proto": "error",
-        "no-return-assign": "error",
-        "no-return-await": "error",
-        "no-self-compare": "error",
-        "no-sequences": "error",
-        "no-shadow-restricted-names": "error",
-        "no-tabs": "error",
-        "no-template-curly-in-string": "warn",
-        "no-throw-literal": "error",
-        "no-trailing-spaces": "off",
-        "no-undef-init": "error",
-        "no-unmodified-loop-condition": "warn",
-        "no-unneeded-ternary": ["error", { "defaultAssignment": false }],
-        "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true, "allowTaggedTemplates": true }],
-        "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }],
-        "no-use-before-define": ["error", { "functions": false, "classes": false, "variables": false }],
-        "no-useless-call": "warn",
-        "no-useless-computed-key": "error",
-        "no-useless-constructor": "error",
-        "no-useless-escape": "error",
-        "no-useless-rename": "error",
-        "no-useless-return": "error",
-        "no-var": "error",
-        "no-whitespace-before-property": "error",
-        "no-with": "error",
-        "object-property-newline": ["error", { "allowMultiplePropertiesPerLine": true }],
-        "one-var": ["error", { "initialized": "never" }],
-        "operator-linebreak": ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
-        "padded-blocks": ["error", { "blocks": "never", "switches": "never", "classes": "never" }],
-        "prefer-const": ["warn", {"destructuring": "any", "ignoreReadBeforeAssign": true}],
-        "prefer-promise-reject-errors": "error",
-        "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
-        "rest-spread-spacing": ["error", "never"],
-        "semi": ["error", "always"],
-        "semi-spacing": ["error", { "before": false, "after": true }],
-        "space-before-blocks": ["error", "always"],
-        "space-before-function-paren": ["error", "always"],
-        "space-in-parens": ["error", "never"],
-        "space-infix-ops": "error",
-        "space-unary-ops": ["error", { "words": true, "nonwords": false }],
-        "spaced-comment": ["error", "always", {
-            "line": { "markers": ["*package", "!", "/", ","] },
-            "block": { "balanced": true, "markers": ["*package", "!", ",", ":", "::", "flow-include"], "exceptions": ["*"] }
-        }],
-        "symbol-description": "error",
-        "template-curly-spacing": ["error", "never"],
-        "template-tag-spacing": ["error", "never"],
-        "unicode-bom": ["error", "never"],
-        "wrap-iife": ["error", "any", { "functionPrototypeMethods": true }],
-        "yield-star-spacing": ["error", "after"],
-        "yoda": ["error", "never"],
-
-        // react
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/unbound-method": "off",
+        "@typescript-eslint/prefer-nullish-coalescing": 2,
+        "@typescript-eslint/prefer-optional-chain": 2,
+        "@typescript-eslint/prefer-for-of": 2,
+        "jsx-a11y/label-has-associated-control": [
+            2,
+            {
+                "labelComponents": [
+                    "label"
+                ]
+            }
+        ],
         "react/prop-types": "off",
-        "react/jsx-boolean-value": "error",
-        "react/self-closing-comp": "error",
-        "react/jsx-indent": ["error", 4],
-        "react/jsx-indent-props": ["error", 4],
+        "react/jsx-props-no-spreading": "off",
+        "import/order": "off",
+        "react/destructuring-assignment": "off",
+        "react/state-in-constructor": "off",
+        "no-alert": "off",
+        "react/no-array-index-key": "off",
+        "no-underscore-dangle": [
+            "error",
+            {
+                "allow": [
+                    "__typename"
+                ]
+            }
+        ],
+        "no-continue": "off",
+        "no-restricted-syntax": [
+            "error",
+            {
+                "selector": "ForInStatement",
+                "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+            },
+            {
+                "selector": "LabeledStatement",
+                "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+            },
+            {
+                "selector": "WithStatement",
+                "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+            }
+        ],
+        "import/extensions": [
+            "error",
+            "never",
+            {
+                "svg": "always"
+            }
+        ],
+        "import/no-unresolved": "off",
+        "prettier/prettier": "warn",
+        "no-restricted-imports": [
+            "error",
+            {
+                "paths": [
+                    {
+                        "name": "styled-components",
+                        "message": "Use styled-components/macro instead"
+                    }
+                ]
+            }
+        ]
     },
-    "globals": {
-        "module": false,
-        "Generator": true
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
     }
 };

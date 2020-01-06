@@ -9,8 +9,8 @@ The config consists of _93 rules_, we'll summarize them here, but for the full s
 
 - **Semicolons at the end of each statement.**
 - **camelCasing should be used on all object properties.**
-- **Always use [curly brace conventions](https://eslint.org/docs/rules/curly).** Even if your block only consists of a single statement. 
-- **Single quotes are the default.** But use double quotes within JSX. 
+- **Always use [curly brace conventions](https://eslint.org/docs/rules/curly).** Even if your block only consists of a single statement.
+- **Single quotes are the default.** But use double quotes within JSX.
 - **Indents with 4 spaces**, no tabs allowed.
 - **Always use === for comparing equality**
 - **Don't use var**, use const/let instead.
@@ -18,7 +18,7 @@ The config consists of _93 rules_, we'll summarize them here, but for the full s
 This is **allowed**:
 ```js
 const a, b, c;
-```  
+```
 This **isn't:**
 ```js
 const a = false, b = true, c = false;
@@ -35,7 +35,7 @@ This doesn't mean you're required to have unit tests, it just validates them cor
 
 
 ## Usage
-Add a `.eslintrc` file to your project:  
+Add a `.eslintrc` file to your project:
 
 
 ```json
@@ -55,8 +55,16 @@ OR add the following to your project's `package.json`
 }
 ```
 
-Install eslint & eslint-config-oberon locally (`yarn add eslint eslint-config-oberon`)
-  
-## Babel
-It is assumed you have all babel packages, `babel-eslint` & `babel-preset-reactapp` (or `babel-preset-react-native`) installed,  
-and configured from `.babelrc` or the babel property in `package.json`  
+Install eslint & eslint-config-oberon locally (`npm i eslint eslint-config-oberon`)
+
+## Commit hook (recommended)
+
+- `npm i lint-staged husky`
+- Add the following to your `package.json`:
+```json
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run typecheck && lint-staged"
+        }
+    }
+```

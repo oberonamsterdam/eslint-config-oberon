@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-oberon",
-    "version": "1.1.3",
+    "version": "2.0.0",
     "description": "Oberon's eslint config",
     "main": "index.js",
     "repository": "git@github.com:oberonamsterdam/eslint-config-oberon.git",
@@ -11,12 +11,18 @@
     "author": "Oberon",
     "license": "MIT",
     "peerDependencies": {
-        "eslint": ">= 3",
-        "babel-eslint": ">= 7"
+        "eslint": ">= 6",
+        "typescript": ">= 3.7"
     },
     "dependencies": {
-        "eslint-plugin-flowtype": "^2.30.4",
-        "eslint-plugin-jest": "^19.0.1",
-        "eslint-plugin-react": "^6.10.3"
+        "@typescript-eslint/eslint-plugin": "^2.10.0",
+        "@typescript-eslint/parser": "^2.10.0",
+        "eslint-config-airbnb-typescript": "^6.3.1",
+        "eslint-config-prettier": "^6.7.0",
+        "eslint-plugin-import": "^2.19.1",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-react": "^7.17.0",
+        "eslint-plugin-react-hooks": "^1.7.0"
     }
 }
