@@ -5,7 +5,7 @@ The Oberon javascript code standard & config.
 ## Codestyle
 
 ### The gist
-The config consists of _93 rules_, we'll summarize them here, but for the full set, see below.
+The config consists of a lot of rules, we'll summarize them here, but for the full set, see below.
 
 - **Semicolons at the end of each statement.**
 - **camelCasing should be used on all object properties.**
@@ -24,15 +24,6 @@ This **isn't:**
 const a = false, b = true, c = false;
 ```
 - **Console/debugger calls will be marked as warnings.** They should not be added to production code.
-
-### Full set
-- Read the set of rules here [here](https://github.com/oberonamsterdam/eslint-config-oberon/blob/master/index.js#L20)
-- Includes `eslint:recommended` (see included rules [here](http://eslint.org/docs/rules/))
-- Includes `plugin:flowtype/recommended` (see exact rules [here](https://github.com/gajus/eslint-plugin-flowtype/blob/master/src/configs/recommended.json))
-- Includes `plugin:react/recommended` (see exact rules [here](https://github.com/yannickcr/eslint-plugin-react/blob/master/index.js#L113))
-- Includes `plugin:jest/recommended` (see exact rules [here](https://www.npmjs.com/package/eslint-plugin-jest#recommended))  
-This doesn't mean you're required to have unit tests, it just validates them correctly if they're present
-
 
 ## Usage
 Add a `.eslintrc` file to your project:
@@ -55,11 +46,11 @@ OR add the following to your project's `package.json`
 }
 ```
 
-Install eslint & eslint-config-oberon locally (`npm i eslint eslint-config-oberon`)
+Install eslint & eslint-config-oberon locally (`npm i eslint eslint-config-oberon -D`)
 
 ## Commit hook (recommended)
 
-- `npm i lint-staged husky`
+- `npm i lint-staged husky -D`
 - Add the following to your `package.json`:
 ```json
     "husky": {
