@@ -42,6 +42,12 @@ module.exports = {
             }
         ],
         "react/prop-types": "off",
+        "react/jsx-key": [
+            2,
+            {
+                "checkFragmentShorthand": true
+            }
+        ],
         "react/jsx-props-no-spreading": "off",
         "import/order": "off",
         "react/destructuring-assignment": "off",
