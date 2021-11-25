@@ -97,6 +97,14 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'react/require-default-props': 'off',
+        'react/react-in-jsx-scope': 0,
+        'react/function-component-definition': [
+            2,
+            {
+                namedComponents: 'arrow-function',
+                unnamedComponents: 'arrow-function',
+            },
+        ],
     },
     parserOptions: {
         ecmaFeatures: {
